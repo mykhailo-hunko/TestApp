@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.support.kotlinCompilerOptions
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.google.devtools.ksp)
@@ -10,7 +12,7 @@ android {
 }
 
 dependencies {
-    api(project(":domain"))
+    implementation(project(":domain"))
 
     implementation(libs.koin.android)
     implementation(libs.kotlinx.serialization)
@@ -18,5 +20,6 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization)
+
     ksp(libs.room.compiler)
 }
