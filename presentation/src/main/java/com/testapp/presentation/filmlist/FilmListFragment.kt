@@ -3,16 +3,16 @@ package com.testapp.presentation.filmlist
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
 import com.testapp.presentation.R
 import com.testapp.presentation.databinding.FragmentFilmListBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FilmListFragment : Fragment(R.layout.fragment_film_list) {
 
     private val adapter: FilmListAdapter by lazy { FilmListAdapter() }
 
-    private val viewModel: FilmListViewModel by viewModels()
+    private val viewModel: FilmListViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val binding = FragmentFilmListBinding.bind(view)

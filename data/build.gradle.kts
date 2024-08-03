@@ -12,9 +12,11 @@ android {
 dependencies {
     api(project(":domain"))
 
+    implementation(libs.koin.android)
     implementation(libs.kotlinx.serialization)
     implementation(libs.kotlinx.coroutines)
     implementation(libs.room.runtime)
     implementation(libs.retrofit)
+    implementation(libs.retrofit.kotlinx.serialization)
     ksp(libs.room.compiler)
 }
