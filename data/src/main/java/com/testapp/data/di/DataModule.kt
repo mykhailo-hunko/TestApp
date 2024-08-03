@@ -3,10 +3,12 @@ package com.testapp.data.di
 import androidx.room.Room
 import com.testapp.data.api.FilmsApi
 import com.testapp.data.database.FilmDatabase
+import com.testapp.data.interceptor.AuthInterceptor
 import com.testapp.data.repository.FilmRepositoryImpl
 import com.testapp.domain.repository.FilmRepository
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType
+import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -32,9 +34,18 @@ val dataModule = module {
     factory {
         Retrofit.Builder()
             .baseUrl("https://api.themoviedb.org/3/")
-            .addConverterFactory(Json.asConverterFactory(MediaType.get("application/json")))
+            .client(OkHttpClient.Builder().addInterceptor(AuthInterceptor).build())
+            .addConverterFactory(
+                get<Json>().asConverterFactory(
+                    MediaType.get(
+                        "application/json"
+                    )
+                )
+            )
             .build()
     }
+
+    factory { Json { ignoreUnknownKeys = true } }
     factory {
         get<Retrofit>().create(FilmsApi::class.java)
     }

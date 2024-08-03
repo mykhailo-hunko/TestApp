@@ -1,7 +1,6 @@
-import org.gradle.kotlin.dsl.support.kotlinCompilerOptions
-
 plugins {
     alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.google.devtools.ksp)
     alias(libs.plugins.kotlin.serialization)
 }
@@ -9,6 +8,14 @@ plugins {
 android {
     namespace = "com.testapp.data"
     compileSdk = 34
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 dependencies {
@@ -17,7 +24,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.kotlinx.serialization)
     implementation(libs.kotlinx.coroutines)
-    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization)
 

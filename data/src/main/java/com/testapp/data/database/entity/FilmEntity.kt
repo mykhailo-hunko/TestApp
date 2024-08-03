@@ -8,14 +8,14 @@ import com.testapp.domain.entity.Film
 @Entity(tableName = "films")
 data class FilmEntity(
     @PrimaryKey val uid: Int,
-    @ColumnInfo(name = "original_title") val originalTitle: String,
+    @ColumnInfo(name = "original_title") val title: String,
     @ColumnInfo(name = "overview") val overview: String,
     @ColumnInfo(name = "poster_path") val posterPath: String,
 )
 
 internal fun FilmEntity.toFilm() = Film(
     id = uid,
-    originalTitle = originalTitle,
+    title = title,
     overview = overview,
     posterPath = posterPath,
 )
