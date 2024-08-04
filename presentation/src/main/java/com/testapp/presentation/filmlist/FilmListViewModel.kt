@@ -32,7 +32,7 @@ class FilmListViewModel(
     fun onUpdate() {
         viewModelScope.launch {
             loadFilmListUseCase.loadFullFilmList()
-                .onFailure { events.value = Event(FilmListEvent.Error(it.message)) }
+                .onFailure { events.value = Event(FilmListEvent.Error(it)) }
                 .onSuccess { events.value = Event(FilmListEvent.StopLoading) }
 
         }

@@ -39,4 +39,6 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.koin.android)
     implementation(libs.material)
+    implementation(libs.splash)
+
 }

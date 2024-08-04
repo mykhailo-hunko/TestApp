@@ -25,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/white40" />
+        android:indeterminate="true"
+        android:indeterminateTint="@color/white90" />
 
 </FrameLayout>
