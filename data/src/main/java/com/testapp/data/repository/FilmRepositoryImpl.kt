@@ -19,6 +19,7 @@ class FilmRepositoryImpl(
     private val filmDao: FilmDao,
     private val coroutineContext: CoroutineContext = Dispatchers.IO,
 ) : FilmRepository {
+
     override fun subscribeToFullFilmList(): Flow<List<Film>> =
         filmDao
             .getAllFilms()
@@ -30,5 +31,4 @@ class FilmRepositoryImpl(
             filmDao.insertFilms(films.results.map(FilmItem::toFilmEntity))
         }
     }
-
 }

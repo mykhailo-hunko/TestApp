@@ -2,7 +2,9 @@
 agp = "8.4.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
+cotoutines = "1.8.0"
 junit = "4.13.2"
+assertJ = "3.25.3"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
@@ -16,10 +18,13 @@ lifecycleLivedataKtx = "2.8.4"
 swiperefreshlayout = "1.1.0"
 koin = "3.5.6"
 retrofit = "2.11.0"
+mockito = "5.2.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+assertJ-core = { module = "org.assertj:assertj-core", version.ref = "assertJ" }
+mockito = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -27,8 +32,9 @@ androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecy
 androidx-fragments-ktx = { module = "androidx.fragment:fragment-ktx", version = "1.8.2" }
 androidx-navigation-fragments-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "nav_version" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "nav_version" }
-kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version = "1.8.0" }
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "cotoutines" }
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.6.3" }
+kotlinx-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "cotoutines" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }

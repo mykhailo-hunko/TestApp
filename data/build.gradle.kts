@@ -22,11 +22,16 @@ dependencies {
     implementation(project(":domain"))
 
     implementation(libs.koin.android)
-    implementation(libs.kotlinx.serialization)
     implementation(libs.kotlinx.coroutines)
-    implementation(libs.room.ktx)
+    implementation(libs.kotlinx.serialization)
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization)
+    implementation(libs.room.ktx)
 
     ksp(libs.room.compiler)
+
+    testImplementation(libs.assertJ.core)
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.test)
+    testImplementation(libs.mockito)
 }
