@@ -2,6 +2,8 @@
 
 Welcome to the Movie Test Android App! This app shows a list of movies and support error-handling. Also it stores data in database and database is the source of truth.
 
+I would be happy to write UI part on Сompose, but in the requirements was mentioned RecyclerView
+
 ## Features
 
 - **Clean Architecture**: The app divided on 3 layers - presentation, data and domain. It's divided for a few modules(each for layer and one main). But for bigger projects it can be better to divide modules as features and make in pluggable.
